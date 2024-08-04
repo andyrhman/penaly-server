@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express, { Request, Response, Router } from "express";
 import { AuthMiddleware } from "./middleware/auth.middleware";
 import { PermissionMiddleware } from "./middleware/permission.middleware";
 import { AuthenticatedUser, Login, Logout, Register, UpdateInfo, UpdatePassword } from "./controller/auth.controller";
@@ -12,6 +12,9 @@ import { AdminDeleteComment, AdminDeleteCommentReply, CheckCommentLike, CheckCom
 import { ArticleStat, Stats, UsersStat } from "./controller/statistic.controller";
 
 export const routes = (router: Router) => {
+    //* Health Check
+    router.get('/', (req: Request, res: Response) => res.status(200).send('OK'));
+
     // * Authentication
     router.post('/api/register', Register);
     router.post('/api/login', Login);
