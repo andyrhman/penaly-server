@@ -90,10 +90,8 @@ export const Login = async (req: Request, res: Response) => {
 
     res.cookie('user_session', token, {
         httpOnly: true,
-        maxAge: maxAge, // Set the maxAge based on rememberMe
+        maxAge: maxAge,
         sameSite: 'strict',
-        // secure: process.env.NODE_ENV === 'production' // Set secure if in production
-        // domain: 'yourdomain.com', // If cookie was set with specific domain
     });
 
     return res.send({
