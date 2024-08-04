@@ -2,15 +2,13 @@
   "name": "penaly-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc",
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon src/app.ts",
     "roles:seed": "ts-node src/seed/role.seed.ts",
     "tags:seed": "ts-node src/seed/tag.seed.ts",
-    "users:seed": "ts-node src/seed/user.seed.ts",
-    "vercel-build": "echo hello"
+    "users:seed": "ts-node src/seed/user.seed.ts"
   },
   "keywords": [],
   "author": "",

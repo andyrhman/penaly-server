@@ -104,7 +104,7 @@ export const Login = async (req: Request, res: Response) => {
 export const AuthenticatedUser = async (req: Request, res: Response) => {
     if (!req["user"]) {
         // Handle the case where user is not set
-        return res.status(401).send({ message: "Unauthenticated" });
+        return res.status(401).send({ message: "Tidak diizinkan" });
     }
     const { password, ...user } = req["user"];
 

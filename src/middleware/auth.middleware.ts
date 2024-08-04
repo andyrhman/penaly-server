@@ -11,7 +11,7 @@ export const AuthMiddleware = async (req: Request, res: Response, next: Function
 
         if (!payload) {
             return res.status(401).send({
-                message: "Unauthenticated"
+                message: "Tidak diizinkan"
             });
         };
 
@@ -21,7 +21,7 @@ export const AuthMiddleware = async (req: Request, res: Response, next: Function
         next();
     } catch (error) {
         return res.status(401).send({
-            message: "Unauthenticated"
+            message: "Tidak diizinkan"
         }); 
     }
 }
