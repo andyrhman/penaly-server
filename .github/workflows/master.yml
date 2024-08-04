@@ -45,8 +45,8 @@ jobs:
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
         aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-        application_name: test-server-2
-        environment_name: Test-server-2-env
+        application_name: test-server-3
+        environment_name: Test-server-3-env
         region: ap-southeast-1
         version_label: ${{github.run_number}}
         deployment_package: ${{ github.run_id }}.zip
