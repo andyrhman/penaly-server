@@ -13,7 +13,14 @@ import { ArticleStat, Stats, UsersStat } from "./controller/statistic.controller
 
 export const routes = (router: Router) => {
     //* Health Check
-    router.get('/', (req: Request, res: Response) => res.status(200).send('OK'));
+    router.get('/', (req: Request, res: Response) => res.status(200).send(
+        {
+            status: "Oke 👍",
+            pesan: "Made with ❤️ by Andy",
+            nama: "ANDY RAHMAN RAMADHAN",
+            nim: "220401070404",
+            kelas: "IT403"
+        }));
 
     // * Authentication
     router.post('/api/register', Register);
@@ -63,7 +70,7 @@ export const routes = (router: Router) => {
 
     router.put('/api/articles/like/:id', AuthMiddleware, LikeArticle);
     router.put('/api/articles/dislike/:id', AuthMiddleware, DislikeArticle);
-    router.get('/api/articles/like/:id', AuthMiddleware, CheckUserLikeArticle);     
+    router.get('/api/articles/like/:id', AuthMiddleware, CheckUserLikeArticle);
     router.post('/api/articles/create', AuthMiddleware, CreateArticleUser);
     router.put('/api/articles/update/:id', AuthMiddleware, UpdateArticleUser);
     router.delete('/api/articles/delete/:id', AuthMiddleware, DeleteArticleUser);
